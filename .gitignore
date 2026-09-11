@@ -1,0 +1,157 @@
+# ==============================================================================
+# Sovereign — Air-Gapped Industrial AI Workbench
+# Git Ignore Configuration
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Python & Bytecode Caches
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ------------------------------------------------------------------------------
+# 2. Virtual Environments & Packaging
+# ------------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+**/.venv/
+**/venv/
+build/
+dist/
+*.egg-info/
+*.egg
+.installed.cfg
+
+# ------------------------------------------------------------------------------
+# 3. Environment Variables & Secrets
+# ------------------------------------------------------------------------------
+# Ignore local environment files containing secrets/paths
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Always track example configuration templates required to run the code
+!.env.example
+!**/.env.example
+
+# ------------------------------------------------------------------------------
+# 4. Large Models, Weights & Quantized Binaries (Downloaded via scripts)
+# ------------------------------------------------------------------------------
+models/
+**/models/
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+# Explicitly preserve model configuration manifests required by orchestrator
+!manoj/models_manifest.yaml
+!sovereign/configs/models.yaml
+
+# ------------------------------------------------------------------------------
+# 5. Local LLM Inference Engine Binaries (llama-server)
+# ------------------------------------------------------------------------------
+llama-bin/
+llama-bin-gpu/
+llama-bin-cpu/
+llama-server.zip
+*.exe
+*.dll
+
+# ------------------------------------------------------------------------------
+# 6. Generated Office Deliverables & Task Outputs
+# ------------------------------------------------------------------------------
+manoj/outputs/*
+outputs/
+!manoj/outputs/.gitkeep
+!outputs/.gitkeep
+
+# ------------------------------------------------------------------------------
+# 7. Tamper-Evident Ledger, Logs & Telemetry Reports
+# ------------------------------------------------------------------------------
+*.log
+**/*.log
+audit_log.jsonl
+manoj/audit.log
+manoj/airgap_report.txt
+
+# ------------------------------------------------------------------------------
+# 8. Temporary Test Run & OCR Ingestion Artifacts
+# ------------------------------------------------------------------------------
+grounded_case.png
+blank_case.png
+blank_test.png
+grounded_test.jpg
+grounded_test_inspection.png
+sandbox/temp_*.py
+sandbox/temp_script.py
+
+# Explicitly preserve test sample fixtures required by tests
+!test_sample_valve.png
+
+# ------------------------------------------------------------------------------
+# 9. Vector Database & Chroma Runtime Store
+# ------------------------------------------------------------------------------
+chroma_db/
+**/chroma_db/
+**/data/chroma/
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+*.db-journal
+
+# ------------------------------------------------------------------------------
+# 10. Unit Tests & Code Coverage
+# ------------------------------------------------------------------------------
+.coverage
+.coverage.*
+.pytest_cache/
+**/.pytest_cache/
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# ------------------------------------------------------------------------------
+# 11. Archive Files & Compressed Backups
+# ------------------------------------------------------------------------------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# ------------------------------------------------------------------------------
+# 12. Node Modules & Frontend Build Logs
+# ------------------------------------------------------------------------------
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ------------------------------------------------------------------------------
+# 13. IDE & Operating System Artifacts
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
